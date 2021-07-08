@@ -43,7 +43,8 @@ bool QNode::init()
 	timerDelay = n.createTimer(ros::Duration(delay), &QNode::timerDelayCallback, this);
 	thetaSubscriber = n.subscribe(subTopicName, 1000, &QNode::thetaSubscriberCallback, this);
     thetaPublisher = n.advertise<std_msgs::Int16MultiArray>(pubTopicName, 10);
-	
+	n.getParam("filePath", filePath);
+
 	start();
 	return true;
 }
@@ -98,7 +99,7 @@ void QNode::saveToFileFunction(std::string fileName)
 {
 	addToLogWindow("saveToFileFunction executed");
 	std::ofstream outputFile;
-	outputFile.open(filePath + fileName, std::ofstream::out | std::ofstream::trunc);
+	outputFile.open(filePath + "/paths/" + fileName, std::ofstream::out | std::ofstream::trunc);
 	if (!outputFile)
 	{
 		logging_model.insertRows(logging_model.rowCount(),1);
@@ -128,13 +129,15 @@ void QNode::saveToFileFunction(std::string fileName)
  */
 void QNode::startRoutine(std::string fileName)
 {
-	addToLogWindow("Loading file: " + QString::fromStdString(filePath + fileName));
+	addToLogWindow("Loading file: " + QString::fromStdString(filePath + "/paths/" + fileName));
 	addToLogWindow("Routine execution started, proceeding to open inputFile");
 
-	inputFile.open(filePath + fileName);
+	inputFile.open(filePath + "/paths/" + fileName);
 	if (!inputFile)
 	{
 		addToLogWindow("Error while loading file");
+		ROS_ERROR("Error while loading file");
+		return;
 	}
 
 	addToLogWindow("inputFile opened, proceeding to read integer Values and copy them into integer-Vectors");

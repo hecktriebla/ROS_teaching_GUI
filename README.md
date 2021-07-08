@@ -14,6 +14,7 @@ I want to share this project because I think that there are not many GUI example
 ## Install
 Install ROS: http://wiki.ros.org/noetic/Installation/Ubuntu\ <br/>
 Clone the repository into the source folder of your catkin workspace <br/>
+Clone catkin_simple as well: https://github.com/catkin/catkin_simple <br/>
 Build with:
 ```
 catkin_make

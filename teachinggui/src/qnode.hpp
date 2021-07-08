@@ -69,9 +69,8 @@ private:
 	std_msgs::Int16MultiArray thetaMsg;
 
 	std::string filePath;
-	std::string scaraFilePath;
-	std::string subTopicName;
-	std::string pubTopicName;
+	std::string subTopicName = "/robot_arduino/pose";
+	std::string pubTopicName = "/teachinggui/pose";
 
 	int Theta1, Theta2, Theta3;
 	int actPos = 0;
@@ -88,8 +87,6 @@ private:
 	int i = 0;
 	char comma = ',';
 	const int deltaDeg = 3;	// depends on how accurate the robot axis is
-
-
 };
 
 }

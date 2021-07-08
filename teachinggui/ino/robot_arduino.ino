@@ -19,7 +19,7 @@ int T1Ist = 0, T2Ist = 0, T3Ist = 0;
 std_msgs::Int16MultiArray mbMsgPub;
 
 // Initialise Publishers
-ros::Publisher servoAnglesPublisher("/delta3d_arduino/pose", &mbMsgPub);
+ros::Publisher servoAnglesPublisher("/robot_arduino/pose", &mbMsgPub);
 
 // Subscriber Callback Functions
 void servoAnglesSubscriberCallback(const std_msgs::Int16MultiArray& poseMsg)
@@ -45,7 +45,7 @@ void servoAnglesSubscriberCallback(const std_msgs::Int16MultiArray& poseMsg)
 }
 
 // Initialise Subscribers
-ros::Subscriber <std_msgs::Int16MultiArray> servoAnglesSubscriber ("/delta3d/pose", servoAnglesSubscriberCallback);
+ros::Subscriber <std_msgs::Int16MultiArray> servoAnglesSubscriber ("/teachinggui/pose", servoAnglesSubscriberCallback);
 
 bool withinRange(int soll, int ist)
 {
