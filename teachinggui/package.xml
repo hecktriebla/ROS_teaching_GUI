@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>teachinggui</name>
+  <version>0.1.0</version>
+  <description>
+
+     teachinggui
+
+  </description>
+  <maintainer email="12345@gmail.com">hecktriebla</maintainer>
+  <author>hecktriebla</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <run_depend>roscpp</run_depend>
+ 
+</package>
