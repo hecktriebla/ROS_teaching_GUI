@@ -12,7 +12,7 @@ If all poses are saved with the designated buttons the vector is saved in a txt-
 I want to share this project because I think that there are not many GUI examples for ROS (written in C++) out there. Adapt the code so it fits your needs.<br/>
 
 ## Install
-Install ROS: http://wiki.ros.org/noetic/Installation/Ubuntu\ <br/>
+Install ROS: http://wiki.ros.org/noetic/Installation/Ubuntu <br/>
 Clone the repository into the source folder of your catkin workspace <br/>
 Clone catkin_simple as well: https://github.com/catkin/catkin_simple <br/>
 Build with:
